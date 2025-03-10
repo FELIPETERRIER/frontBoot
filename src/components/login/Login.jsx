@@ -21,9 +21,13 @@ const Login = () => {
   useEffect(()=>{
     loadUsers()
   },[])
-  async function loadUsers(){
-    const response = await Api.get("/Login")
-    console.log(response)
+  async function loadUsers() {
+    try {
+      const response = await Api.get("/Login");
+      console.log(response);
+    } catch (error) {
+      console.error("Erro ao carregar os usuários", error);
+    }
   }
  
 
@@ -52,7 +56,7 @@ const Login = () => {
             onChange={(e) =>setPassword(e.target.value) } />
             <FaLock />
           </div>
-          <button onClick={useEffect()}>Enter</button>
+          <button  type="submit">Enter</button>
           <div className='recall-forget'>
             <label>
               <input type="checkbox" />
