@@ -6,13 +6,13 @@
     text-shadow: #000, 1px ,1px;
    
 }
-.App{
+body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-image: url('./assets/504c77cf789fe927a44f1af5ecf5ae1c_crk9akte878c73bq3ve0_image.png');
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:cover;
     background-position: center;
 }

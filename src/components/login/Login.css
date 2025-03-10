@@ -4,3 +4,13 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
     -webkit-appearance: none;
     margin: 0;
   }
+.container{
+ color: azure;
+
+}
+button{
+  background-color: #371447;
+  width: 100%;
+  height: 50px;
+  color: aliceblue;
+}

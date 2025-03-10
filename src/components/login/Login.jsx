@@ -1,9 +1,9 @@
 import React from 'react';
 import './Login.css'
 import { FaUser, FaLock, FaIdBadge } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { IMaskInput } from "react-imask";
-
+import Api from '../../Services/ApiService'; 
 
 const Login = () => {
   const[id,setId] = useState("");  
@@ -16,7 +16,16 @@ const Login = () => {
     alert('enviando os dados' + id + " - " + user + " - "  + password)
 
     console.log('envio')
+
   }
+  useEffect(()=>{
+    loadUsers()
+  },[])
+  async function loadUsers(){
+    const response = await Api.get("/Login")
+    console.log(response)
+  }
+ 
 
 
 
@@ -43,7 +52,7 @@ const Login = () => {
             onChange={(e) =>setPassword(e.target.value) } />
             <FaLock />
           </div>
-          <button>Enter</button>
+          <button onClick={useEffect()}>Enter</button>
           <div className='recall-forget'>
             <label>
               <input type="checkbox" />
